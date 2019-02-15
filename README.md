@@ -1,0 +1,2 @@
+- Using Google maps API, the program will display shortest path between the pickup point filled by user.
+- Voice Based input is applied by using the SpeechRecognition interface of the Web Speech API.(Runs in chrome 33+)
