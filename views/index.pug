@@ -13,17 +13,24 @@ block content
   script.
     let locs
     let startloc
+
     $('#showmap').click(function(){
       locs = $('#locs').val().split(',');
       startloc = locs[0];
-      MapLoad();
     });
-    function MapLoad() {
-      var mapProp= {
-        center:new google.maps.LatLng(28.7041,77.1025),
-        zoom:11,
-      };
+
+    function MapLoad() {                 //To initialize google maps
+      directionsDisplay = new google.maps.DirectionsRenderer();
+      var mapProp = {
+        center: new google.maps.LatLng(28.7041,77.1025),//Placing the center of map to New Delhi
+        zoom: 11,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        draggableCursor: 'move'
+      }; 
       var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      directionsDisplay.setMap(map);
     }
+
+    google.maps.event.addDomListener(window, 'load', MapLoad); 
     
     
